@@ -1,0 +1,41 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %} Gerenciador de Partidas {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Lista de Raças</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Atributos</th>
+                <th>Habilidades</th>
+                <th>Autor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for raca in racas %}
+            <tr>
+                <td>{{ raca.nome }}</td>
+                <td>{{ raca.descricao }}</td>
+                <td>{{ raca.atributos }}</td>
+                <td>{{ raca.habilidades }}</td>
+                <td>{{ raca.autor.username }}</td>
+                <td>
+                    <a href="{% url 'editar_raca' raca.id %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'deletar_raca' raca.id %}" class="btn btn-sm btn-danger">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'criar_raca' %}" class="btn btn-primary">Criar Nova Raça</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

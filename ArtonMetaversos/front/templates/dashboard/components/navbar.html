@@ -1,0 +1,13 @@
+<header class="bg-light border-right text-center" id="sidebar-wrapper">
+    <div class="sidebar-heading">Dashboard </div><hr>
+    <div class="list-group list-group-flush ">
+        <a href="{% url 'dashboard_home' %}" class="list-group-item list-group-item-action bg-light">Home</a>
+        <a href="{% url 'manage_games' %}" class="list-group-item list-group-item-action bg-light">Gerenciar Partidas</a>
+        <a href="{% url 'profile' %}" class="list-group-item list-group-item-action bg-light">Perfil</a>
+        <a href="{% url 'settings' %}" class="list-group-item list-group-item-action bg-light">Configurações</a>
+        <form action="{% url 'logout' %}" method="post" class="list-group-item list-group-item-action bg-light">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">Sair</button>
+        </form>
+    </div>
+</header>

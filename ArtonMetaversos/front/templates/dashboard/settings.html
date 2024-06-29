@@ -1,0 +1,24 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %} Configurações {% endblock %}
+
+{% block content %}
+<style>
+    .div {
+        background-color: #ffffffbb;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .imagem {
+        background-image: url('../../static/imgs/bg-login.jpeg');
+        background-size: cover;
+        background-position: center;
+        
+    }
+</style>
+    <div class="col-6 text-center div p-5 align-content-center">
+        <h1 class="display-1">Configurações</h1>
+        <p class="lead">Seja bem-vindo ao Arton Metaversos, um gerenciador de mundos de fantasia e aventuras em Tormenta20!</p>
+    </div>
+{% endblock %}

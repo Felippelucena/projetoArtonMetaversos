@@ -1,0 +1,43 @@
+{% extends 'site/base.html' %}
+{% block title %}Registrar{% endblock %}
+
+{% block content %}
+<style>
+    .divform {
+        background-color: #ffffffbb;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .imagem {
+        background-image: url('../static/imgs/bg-registrar.jpeg');
+        background-size: cover;
+        background-position: center; 
+    }
+</style>
+<div class="container col-md-6 col-sm-7 col-9 divform text-center ">
+    <h2 class="m-2">Comece sua jornada aqui!</h2>
+    <div class="row justify-content-center">
+        <form method="post" class="col-9">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password1">Senha:</label>
+                <input type="password" class="form-control" id="password1" name="password1" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirmar Senha:</label>
+                <input type="password" class="form-control" id="password2" name="password2" required>
+            </div>
+            <button type="submit" class="btn btn-primary m-4">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

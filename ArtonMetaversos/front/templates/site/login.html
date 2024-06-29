@@ -1,0 +1,35 @@
+{% extends 'site/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<style>
+    .divform {
+        background-color: #ffffffbb;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .imagem {
+        background-image: url('../static/imgs/bg-login.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<div class="container col-md-6 col-sm-7 col-9 divform text-center">
+    <div class="row justify-content-center">
+        <h2>Login</h2>
+        <form method="post" class="col-9">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
