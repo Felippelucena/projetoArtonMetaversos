@@ -5,23 +5,25 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header">
-                <h2>{{ raca.nome }}</h2>
-            </div>
-            <div class="card-body">
-                <p><strong>Descrição:</strong> {{ raca.descricao }}</p>
-                <p><strong>Atributos:</strong> {{ raca.atributos }}</p>
-                <p><strong>Habilidades:</strong></p>
-                <ul>
-                    {% for habilidade in raca.habilidades.all %}
-                        <li>{{ habilidade }}</li>
-                    {% endfor %}
-                </ul>
-                <p><strong>Logica de Criação:</strong> {{ raca.logica_de_criacao }}</p>
-                <p><strong>Autor:</strong> {{ raca.autor }}</p>
-                <p><strong>Versão:</strong> {{ raca.versao }}</p>
+    <div class="container-fluid bg-light h-100 align-content-center">
+        <div class="row justify-content-center">
+            <div class="card col-6">
+                <div class="card-header">
+                    <h2>{{ raca.nome }}</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>Descrição:</strong> {{ raca.descricao }}</p>
+                    <p><strong>Atributos:</strong> {{ raca.atributos }}</p>
+                    <p><strong>Habilidades:</strong></p>
+                    <ul>
+                        {% for habilidade in raca.habilidades.all %}
+                            <li>{{ habilidade }}</li>
+                        {% endfor %}
+                    </ul>
+                    <p><strong>Logica de Criação:</strong> {{ raca.logica_de_criacao }}</p>
+                    <p><strong>Autor:</strong> {{ raca.autor }}</p>
+                    <p><strong>Versão:</strong> {{ raca.versao }}</p>
+                </div>
             </div>
         </div>
     </div>
