@@ -86,7 +86,7 @@ def criar_raca(request):
             versao='1.0'
         )
         raca.save()
-        return redirect('/dashboard')  # Redirecione para uma página apropriada após a criação
+        return redirect('/dashboard/raca/lista')  # Redirecione para uma página apropriada após a criação
         
     return render(request, 'dashboard/raca/criar.html')
 

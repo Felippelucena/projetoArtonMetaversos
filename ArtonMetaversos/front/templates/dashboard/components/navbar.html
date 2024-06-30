@@ -1,9 +1,22 @@
-<header class="bg-light border-right text-center" id="sidebar-wrapper">
-    <div class="sidebar-heading">Dashboard </div><hr>
-    <div class="list-group list-group-flush ">
-        <a href="{% url 'dashboard_home' %}" class="list-group-item list-group-item-action bg-light">Home</a>
+<header class="bg-light border-right text-center p-3" id="sidebar-wrapper">
+    <div class="sidebar-heading"><a href="{% url 'dashboard_home' %}" class="list-group-item">Dashboard</a></div>
+    <hr>
+    <div class="list-group list-group-flush">
+        
         <a href="{% url 'manage_games' %}" class="list-group-item list-group-item-action bg-light">Gerenciar Partidas</a>
         <a href="{% url 'profile' %}" class="list-group-item list-group-item-action bg-light">Perfil</a>
+
+            <a href="#editorSubmenu" class="list-group-item list-group-item-action bg-light" data-bs-toggle="collapse" aria-expanded="false">
+                Editor
+            </a>
+            <div class="collapse" id="editorSubmenu">
+                <a class="list-group-item list-group-item-action bg-light p-1" href="{% url 'lista_racas' %}">Raças</a>
+                <a class="list-group-item list-group-item-action bg-light p-1" href="#">Classes</a>
+                <a class="list-group-item list-group-item-action bg-light p-1" href="#">Poderes</a>
+                <a class="list-group-item list-group-item-action bg-light p-1" href="#">Magias</a>
+                <a class="list-group-item list-group-item-action bg-light p-1" href="#">Regras</a>
+            </div>
+
         <a href="{% url 'settings' %}" class="list-group-item list-group-item-action bg-light">Configurações</a>
         <form action="{% url 'logout' %}" method="post" class="list-group-item list-group-item-action bg-light">
             {% csrf_token %}

@@ -1,0 +1,37 @@
+{
+    "addAttribute": {
+      "title": "Adicionar Atributo",
+      "fields": [
+        {
+          "label": "Atributo",
+          "type": "text",
+          "class": "attribute",
+          "placeholder": "Nome do Atributo"
+        },
+        {
+          "label": "Pontos",
+          "type": "number",
+          "class": "points",
+          "placeholder": "Número de Pontos"
+        },
+        {
+          "label": "Observações",
+          "type": "text",
+          "class": "notes",
+          "placeholder": "Observações (opcional)"
+        }
+      ]
+    },
+    "anotherStep": {
+      "title": "Outro Passo",
+      "fields": [
+        {
+          "label": "Campo Exemplo",
+          "type": "text",
+          "class": "example",
+          "placeholder": "Exemplo de Campo"
+        }
+      ]
+    }
+  }
+  
