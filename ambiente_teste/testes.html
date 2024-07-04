@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Construtor Lógico</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
   <style>
     .step {
       margin-bottom: 20px;
@@ -24,10 +16,6 @@
       margin-top: 10px;
     }
   </style>
-</head>
-<body>
-  <div class="container-fluid mt-5 bg-dark text-light p-5">
-    <h1>Construtor Lógico</h1>
     <form id="logicConstructorForm">
       <div class="form-group bg-light p-5 text-dark">
         <label for="steps">Construtor Lógico</label>
@@ -39,7 +27,6 @@
   </div>
 
   <script>
-    // Definindo o JSON diretamente no JavaScript
     const stepTemplates = {
       "addAttribute": {
         "title": "Adicionar Atributo",
@@ -94,7 +81,7 @@
           stepHeader.className = 'step-header';
           stepHeader.innerHTML = `
             <span class="step-title">${stepTemplates["addAttribute"].title}</span>
-            <button type="button" class="btn btn-secondary btn-sm toggle-step-button">Expandir</button>
+            <button type="button" class="btn btn-secondary btn-sm toggle-step-button">Comprimir</button>
           `;
       
           const stepBody = document.createElement('div');
@@ -155,9 +142,8 @@
           });
         }
       
-        document.getElementById('logicConstructorForm').addEventListener('submit', (event) => {
-          event.preventDefault();
-      
+
+      function salvarlogica() {
           const steps = [];
           document.querySelectorAll('.step').forEach(stepElement => {
             const step = {
@@ -171,8 +157,7 @@
           });
       
           console.log('Passos:', steps);
+        }
         });
-      });
+
   </script>
-</body>
-</html>

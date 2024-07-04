@@ -27,7 +27,7 @@
         <!-- Descrição -->
         <div class="mb-3">
             <label for="descricao" class="form-label">Descrição</label>
-            <textarea class="form-control" id="descricao" name="descricao" rows="4" required></textarea>
+            <textarea class="form-control" id="descricao" name="descricao" rows="2" required></textarea>
         </div>
         
         <!-- Atributos -->
@@ -73,11 +73,40 @@
         <!-- Lógica de Criação -->
         <div class="mb-3">
             <label for="logica_de_criacao" class="form-label">Lógica de Criação</label>
-            <textarea class="form-control" id="logica_de_criacao" name="logica_de_criacao" rows="6"></textarea>
+            <div id="passos-logicos">
+                <!-- Aqui serão adicionados os campos dinâmicos -->
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-primary mt-2" id="add-passo">Adicionar Passo Lógico</button>
         </div>
         
         <button type="submit" class="btn btn-primary">Criar Raça</button>
     </form>
 </div>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var passosContainer = document.getElementById('passos-logicos');
+        var addButton = document.getElementById('add-passo');
+        var passoIndex = 0;
+    
+        addButton.addEventListener('click', function() {
+            var passoDiv = document.createElement('div');
+            passoDiv.classList.add('mb-3');
+    
+            var passoLabel = document.createElement('label');
+            passoLabel.textContent = 'Passo ' + (passoIndex + 1);
+            passoLabel.classList.add('form-label');
+            passoDiv.appendChild(passoLabel);
+    
+            var passoInput = document.createElement('input');
+            passoInput.setAttribute('type', 'text');
+            passoInput.setAttribute('class', 'form-control');
+            passoInput.setAttribute('name', 'passos_logicos[' + passoIndex + ']');
+            passoInput.setAttribute('placeholder', 'Digite o passo lógico');
+            passoDiv.appendChild(passoInput);
+    
+            passosContainer.appendChild(passoDiv);
+            passoIndex++;
+        });
+    });
+    </script>
 {% endblock %}

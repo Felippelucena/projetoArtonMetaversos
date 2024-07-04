@@ -74,14 +74,14 @@ def criar_raca(request):
         descricao = request.POST['descricao']
         atributos = ', '.join(request.POST.getlist('atributos'))
         habilidades = ', '.join(request.POST.getlist('habilidades'))
-        logica_de_criacao = request.POST['logica_de_criacao']
+        passos_logicos = request.POST.getlist('passos_logicos')
         
         raca = Raca(
             nome=nome,
             descricao=descricao,
             atributos=atributos,
             habilidades=habilidades,
-            logica_de_criacao=logica_de_criacao,
+            logica_de_criacao=passos_logicos,
             autor=request.user,
             versao='1.0'
         )

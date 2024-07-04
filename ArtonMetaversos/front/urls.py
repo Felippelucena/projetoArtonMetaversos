@@ -12,6 +12,6 @@ urlpatterns = [
     path('dashboard/profile/', views.profile, name='profile'),
     path('dashboard/settings/', views.settings, name='settings'),
     path('dashboard/raca/criar/', views.criar_raca, name='criar_raca'),
-    path('dashboard/racas/lista/', views.lista_racas, name='lista_racas'),
+    path('dashboard/raca/lista/', views.lista_racas, name='lista_racas'),
     path('dashboard/raca/<int:raca_id>/', views.detalhes_raca, name='detalhes_raca'),
 ]
